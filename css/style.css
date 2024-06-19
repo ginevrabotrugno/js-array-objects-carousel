@@ -30,9 +30,11 @@ a {
 
 .item {
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
-.col_big img, .img_small img {
+.item img, .img_small img {
     object-fit: cover;
     width: 100%;
     height: 100%;
