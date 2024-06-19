@@ -9,8 +9,6 @@ a {
     color: inherit;
 }
 
-
-
 #wrapper {
     width: 100%;
     height: 100vh;
@@ -28,27 +26,31 @@ a {
 .col_big {
     width: 75%;
     height: 100%;
-    /* debug */
-    background-color: violet;
+}
+
+.col_big img, .img_small img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
 }
 
 .col_small {
     width: 25%;
     height: 100%;
     position: relative;
-    /* debug */
-    background-color: red;
 }
 
 .button {
     width: 50px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    z-index: 900;
 }
 
 .button span {
@@ -70,5 +72,13 @@ a {
 .img_small {
     width: 100%;
     height: calc(100% / 5);
-    border: solid 2px black;
+}
+
+.img_small {
+    filter: opacity(0.6);
+}
+
+.img_small.active {
+    filter: none;
+    border: solid 2px white;
 }
