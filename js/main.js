@@ -65,12 +65,15 @@ images.forEach(element => {
 });
 
 const items = document.getElementsByClassName("item");
-console.log(items);
+
+const sideItems = document.getElementsByClassName("img_small");
 
 let activeItem = 0;
+let activeSideItem = 0;
 
 // aggiungo classe active all'elemento ativo
 items[activeItem].classList.add("active");
+sideItems[activeSideItem].classList.add("active");
 
 // Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.
 
@@ -100,9 +103,31 @@ buttonNext.addEventListener("click",
             items[activeItem].classList.add("active");
         }
     }
-
-    
 );
+
+buttonNext.addEventListener("click",
+    function () {
+
+        if (activeSideItem < images.length - 1) {
+            // rimuovo la classe dal precedente
+            sideItems[activeSideItem].classList.remove("active");
+
+            activeSideItem++;
+
+            // aggiungo classe active all'elemento ativo
+            sideItems[activeSideItem].classList.add("active");
+
+        }  else {
+            sideItems[activeSideItem].classList.remove("active");
+
+            activeSideItem = 0;
+
+            // aggiungo classe active all'elemento ativo
+            sideItems[activeSideItem].classList.add("active");
+        }
+    }
+);
+
 
 const buttonPrev = document.getElementById("prev");
 
@@ -131,7 +156,32 @@ buttonPrev.addEventListener("click",
         
     }
 
-)
+);
 
+buttonPrev.addEventListener("click",
+    function () {
+
+        if (activeSideItem > 0) {
+            // rimuovo la classe dal precedente
+            sideItems[activeSideItem].classList.remove("active");
+
+            activeSideItem--;
+
+            // aggiungo classe active all'elemento ativo
+            sideItems[activeSideItem].classList.add("active");
+
+        } else {
+            sideItems[activeSideItem].classList.remove("active");
+
+            activeSideItem = images.length - 1;
+
+            // aggiungo classe active all'elemento ativo
+            sideItems[activeSideItem].classList.add("active");
+
+        }
+        
+    }
+
+);
 
 
