@@ -46,6 +46,10 @@ images.forEach(element => {
         `
         <div class="item">
             <img src="${element.image}" alt="${element.title}">
+            <div class="info">
+                <div class="title">${element.title}</div>
+                <div class="text">${element.text}</div>
+            </div>
         </div>
 
         `;

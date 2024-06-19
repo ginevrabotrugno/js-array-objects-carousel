@@ -32,6 +32,7 @@ a {
     display: none;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .item img, .img_small img {
@@ -91,4 +92,20 @@ a {
 .img_small.active {
     filter: none;
     border: solid 2px white;
+}
+
+.info {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 900;
 }
