@@ -35,3 +35,32 @@ const images = [
     } 
 ];
 
+// seleziono dall'html l'elemento contenitore
+const container = document.querySelector(".col_big");
+const sideContainer = document.querySelector(".col_small");
+
+
+images.forEach(element => {
+    // creo l'elemento da inserire in html
+    let item = 
+        `
+        <div class="item">
+            <img src="${element.image}" alt="${element.title}">
+        </div>
+
+        `;
+    // inserisco l'elemento creato in pagina
+    container.innerHTML += item;
+
+    let itemSmall =
+        `
+        <div class="img_small">
+            <img src="${element.image}" alt="${element.title}">
+        </div>
+
+        `;
+
+    sideContainer.innerHTML += itemSmall;
+    
+});
+

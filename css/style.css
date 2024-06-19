@@ -28,6 +28,10 @@ a {
     height: 100%;
 }
 
+.item {
+    display: none;
+}
+
 .col_big img, .img_small img {
     object-fit: cover;
     width: 100%;
@@ -76,6 +80,10 @@ a {
 
 .img_small {
     filter: opacity(0.6);
+}
+
+.active {
+    display: block;
 }
 
 .img_small.active {
